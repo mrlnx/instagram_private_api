@@ -249,7 +249,7 @@ class MediaEndpointsMixin(object):
             raise ValueError('The total length of the comment cannot exceed 300 characters.')
         if re.search(r'[a-z]+', comment_text, re.IGNORECASE) and comment_text == comment_text.upper():
             raise ValueError('The comment cannot consist of all capital letters.')
-        if len(re.findall(r'#[^#]+\b', comment_text, re.UNICODE | re.MULTILINE)) > 4:
+        if len(re.findall(r'#[^#]+\b', comment_text, re.UNICODE | re.MULTILINE)) > 28:
             raise ValueError('The comment cannot contain more than 4 hashtags.')
         if len(re.findall(r'\bhttps?://\S+\.\S+', comment_text)) > 1:
             raise ValueError('The comment cannot contain more than 1 URL.')
